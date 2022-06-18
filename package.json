@@ -6,6 +6,8 @@
   "devDependencies": {
     "@types/jest": "^28.1.1",
     "@types/node": "^17.0.42",
+    "@types/supertest": "^2.0.12",
+    "@types/uuid": "^8.3.4",
     "@typescript-eslint/eslint-plugin": "^5.28.0",
     "@typescript-eslint/parser": "^5.28.0",
     "eslint": "^8.17.0",
@@ -21,7 +23,8 @@
   "scripts": {
     "start:dev": "nodemon",
     "build": "tsc --build",
-    "start": "npm run build && node build/index.js",
+    "start": "npm run build && node dist/src/index.js",
+    "start:multi": "ts-node src/withCluster.ts",
     "lint": "eslint ./src/**",
     "lint:fix": "eslint ./src/** --fix",
     "test": "jest"
@@ -29,6 +32,8 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "dotenv": "^16.0.1"
+    "dotenv": "^16.0.1",
+    "supertest": "^6.2.3",
+    "uuid": "^8.3.2"
   }
 }
